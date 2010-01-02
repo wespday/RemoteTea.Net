@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteTea.Net", "RemoteTea.Net.csproj", "{9C016B59-DAD9-48A1-A5E0-7A477A108530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jrpcgen", "..\jrpcgen\jrpcgen.csproj", "{CC842806-CB2B-4262-A503-E4BD50F350EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "..\test\test.csproj", "{8F433870-32F6-4A24-8B5C-2A84DEFE7640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jportmap", "..\jportmap\jportmap.csproj", "{ABCAF5FE-3492-4DEB-8C12-50DF332BE375}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C016B59-DAD9-48A1-A5E0-7A477A108530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C016B59-DAD9-48A1-A5E0-7A477A108530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C016B59-DAD9-48A1-A5E0-7A477A108530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C016B59-DAD9-48A1-A5E0-7A477A108530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC842806-CB2B-4262-A503-E4BD50F350EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC842806-CB2B-4262-A503-E4BD50F350EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC842806-CB2B-4262-A503-E4BD50F350EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC842806-CB2B-4262-A503-E4BD50F350EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F433870-32F6-4A24-8B5C-2A84DEFE7640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F433870-32F6-4A24-8B5C-2A84DEFE7640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F433870-32F6-4A24-8B5C-2A84DEFE7640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F433870-32F6-4A24-8B5C-2A84DEFE7640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCAF5FE-3492-4DEB-8C12-50DF332BE375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCAF5FE-3492-4DEB-8C12-50DF332BE375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCAF5FE-3492-4DEB-8C12-50DF332BE375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCAF5FE-3492-4DEB-8C12-50DF332BE375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

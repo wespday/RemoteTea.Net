@@ -335,8 +335,8 @@ namespace org.acplt.oncrpc
 			// two ints in network order, that is: big endian with the high int
 			// comming first.
 			//
-			xdrEncodeInt((int)((value) >> (32 & 0x1f)));
-			xdrEncodeInt((int)(value & unchecked((int)(0xFFFFFFFF))));
+			xdrEncodeInt((int)((value) >> 32) & unchecked((int)(0xffffffff)));
+			xdrEncodeInt((int)(value & unchecked((int)(0xffffffff))));
 		}
 
 		/// <summary>

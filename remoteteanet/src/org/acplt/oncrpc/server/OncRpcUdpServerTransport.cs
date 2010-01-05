@@ -238,32 +238,33 @@ namespace org.acplt.oncrpc.server
 		/// if the portmapper could not be contacted
 		/// successfully.
 		/// </exception>
-		public override void register()
-		{
-			try
-			{
-				OncRpcPortmapClient portmapper = new OncRpcPortmapClient
-					(IPAddress.Loopback);
-				int size = info.Length;
-				for (int idx = 0; idx < size; ++idx)
-				{
-					//
-					// Try to register the port for our transport with the local ONC/RPC
-					// portmapper. If this fails, bail out with an exception.
-					//
-					if (!portmapper.setPort(info[idx].program, info[idx].version, OncRpcProtocols
-						.ONCRPC_UDP, port))
-					{
-						throw (new OncRpcException(OncRpcException.RPC_CANNOTREGISTER
-							));
-					}
-				}
-			}
-			catch (IOException)
-			{
-				throw (new OncRpcException(OncRpcException.RPC_FAILED
-					));
-			}
+        public override void register()
+        {
+            try
+            {
+                OncRpcPortmapClient portmapper = new OncRpcPortmapClient
+                    (IPAddress.Loopback);
+                int size = info.Length;
+                for (int idx = 0; idx < size; ++idx)
+                {
+                    //
+                    // Try to register the port for our transport with the local ONC/RPC
+                    // portmapper. If this fails, bail out with an exception.
+                    //
+                    if (!portmapper.setPort(info[idx].program, info[idx].version, OncRpcProtocols
+                        .ONCRPC_UDP, port))
+                    {
+                        throw (new OncRpcException(OncRpcException.RPC_CANNOTREGISTER
+                            ));
+                    }
+                }
+            }
+            catch (IOException)
+            {
+                throw (new OncRpcException(OncRpcException.RPC_FAILED
+                    ));
+            }
+        }
 		
 
 		/// <summary>Retrieves the parameters sent within an ONC/RPC call message.</summary>

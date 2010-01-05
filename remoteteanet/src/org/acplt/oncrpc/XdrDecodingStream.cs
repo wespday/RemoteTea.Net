@@ -310,10 +310,10 @@ namespace org.acplt.oncrpc
         public long xdrDecodeLong()
         {
             //
-            // Similiar to xdrEncodeLong: just read in two ints in network order.
+            // Similiar to xdrEncodeLong: just read in two ints in network order.  We
+            // OR the int's together rather than adding them...
             //
-            return (((long)xdrDecodeInt()) << 32) + (((long)xdrDecodeInt()) & unchecked((int)
-                (0x00000000FFFFFFFFL)));
+            return ((long)xdrDecodeInt() << 32) | ((long)xdrDecodeInt() & 0xffffffff);
         }
 
         /// <summary>

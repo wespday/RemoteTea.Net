@@ -115,7 +115,7 @@ namespace org.acplt.oncrpc.server
 			}
 			catch (System.IO.IOException)
 			{
-				throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_FAILED
+				throw (new OncRpcException(OncRpcException.RPC_FAILED
 					));
 			}
 		}

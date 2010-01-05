@@ -118,19 +118,38 @@ namespace tests.org.acplt.oncrpc.jrpcgen
                 Console.Out.WriteLine(e.StackTrace);
                 return;
 			}
-			System.Console.Out.Write("About to get a numbered foo string: ");
-			try
-			{
-				string echo = client.checkfoo_2(42);
-				System.Console.Out.WriteLine("ok. Echo: \"" + echo + "\"");
-			}
-			catch (System.Exception e)
-			{
+            System.Console.Out.Write("About to get a numbered foo string: ");
+            try
+            {
+                string echo = client.checkfoo_2(42);
+                System.Console.Out.WriteLine("ok. Echo: \"" + echo + "\"");
+            }
+            catch (System.Exception e)
+            {
                 Console.Out.WriteLine(e.Message);
                 Console.Out.WriteLine(e.StackTrace);
                 return;
-			}
-			System.Console.Out.Write("Linked List test: ");
+            }
+            System.Console.Out.Write("About to test doubles: ");
+            try
+            {
+                double result = client.mult_2(5.0, 7.312);
+                if (result == (5.0 * 7.312))
+                {
+                    System.Console.Out.WriteLine("ok. Result: \"" + result + "\"");
+                }
+                else
+                {
+                    System.Console.Out.WriteLine("fail. Result \"" + result + "\"");
+                }
+            }
+            catch (System.Exception e)
+            {
+                Console.Out.WriteLine(e.Message);
+                Console.Out.WriteLine(e.StackTrace);
+                return;
+            }
+            System.Console.Out.Write("Linked List test: ");
 			try
 			{
 				LINKEDLIST node1 = new LINKEDLIST

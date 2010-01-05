@@ -89,6 +89,11 @@ namespace tests.org.acplt.oncrpc.jrpcgen
 		{
 		}
 
+        public override double Mult_2(double a, double b)
+        {
+            return a * b;
+        }
+
 		public static void Main(string[] args)
 		{
 			Console.Out.WriteLine("Starting demoServer...");

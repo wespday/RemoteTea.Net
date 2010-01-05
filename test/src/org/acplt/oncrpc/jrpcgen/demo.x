@@ -85,6 +85,7 @@ program DEMO {
         string cat3(string one, string two, string three) = 43;
         string checkfoo(ENUMFOO foo) = 3;
         LINKEDLIST llcat(LINKEDLIST l1, LINKEDLIST l2) = 55;
+        double mult(double a, double b) = 71;
         void test(string a, ENUMFOO b, ENUMFOO c, int d) = 100;
     } = 2;
 } = 0x20049678;

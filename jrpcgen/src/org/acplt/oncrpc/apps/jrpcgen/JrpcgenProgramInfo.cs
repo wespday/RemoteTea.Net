@@ -8,10 +8,12 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenProgramInfo</code> class contains information about a
 	/// single ONC/RPC program as defined in an rpcgen "x"-file.
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.1.1.1 $ $Date: 2003/08/13 12:03:46 $ $State: Exp $ $Locker:  $
 	/// 	</version>
 	/// <author>Harald Albrecht</author>
+        /// <author>Jay Walters</author>
 	internal class JrpcgenProgramInfo
 	{
 		/// <summary>Program number assigned to an ONC/RPC program.</summary>

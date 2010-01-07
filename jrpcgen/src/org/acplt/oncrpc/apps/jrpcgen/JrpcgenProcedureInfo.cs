@@ -7,9 +7,11 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenProcedureInfo</code> class contains information about a
 	/// specific version of an ONC/RPC program as defined in an rpcgen "x"-file.
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.3 $ $Date: 2003/08/14 11:26:50 $ $State: Exp $ $Locker:  $</version>
 	/// <author>Harald Albrecht</author>
+        /// <author>Jay Walters</author>
 	internal class JrpcgenProcedureInfo
 	{
 		/// <summary>

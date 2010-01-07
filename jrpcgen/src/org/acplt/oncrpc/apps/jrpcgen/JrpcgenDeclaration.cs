@@ -7,9 +7,11 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenDeclaration</code> class represents a single declaration
 	/// from an rpcgen "x"-file.
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.2 $ $Date: 2003/08/14 08:08:34 $ $State: Exp $ $Locker:  $</version>
 	/// <author>Harald Albrecht</author>
+        /// <author>Jay Walters</author>
 	public class JrpcgenDeclaration : System.ICloneable
 	{
 		/// <summary>Identifier.</summary>

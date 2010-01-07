@@ -6,19 +6,17 @@ using org.acplt.oncrpc.server;
 namespace org.acplt.oncrpc.apps.jportmap
 {
 	/// <summary>
-	/// The class <code>jportmap</code> implements a Java-based ONC/RPC port mapper,
-	/// speaking the widely deployed protocol version 2.
+	/// The class <code>csportmap</code> is the command-line main
+	/// for an ONC/RPC port mapper, speaking the widely deployed
+	/// protocol version 2.
 	/// </summary>
 	/// <remarks>
-	/// The class <code>jportmap</code> implements a Java-based ONC/RPC port mapper,
-	/// speaking the widely deployed protocol version 2.
-	/// <p>This class can be either used stand-alone (a static <code>main</code> is
-	/// provided for this purpose) or as part of an application. In this case you
-	/// should check first for another portmap already running before starting your
-	/// own one.
+	/// The class <code>csportmap</code> is the command-line main
+	/// for an ONC/RPC port mapper, speaking the widely deployed
+	/// protocol version 2.
 	/// </remarks>
 	/// <version>$Revision: 1.2 $ $Date: 2003/08/14 11:26:50 $ $State: Exp $ $Locker:  $</version>
-	/// <author>Harald Albrecht</author>
+	/// <author>Jay Walters</author>
 	public class csportmap : jportmap
 	{
 		/// <summary>

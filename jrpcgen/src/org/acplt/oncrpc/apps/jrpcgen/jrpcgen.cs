@@ -9,14 +9,17 @@ namespace org.acplt.oncrpc.apps.jrpcgen
     /// compiler.
     /// </summary>
     /// <remarks>
-    /// The class <code>jrpcgen</code> implements a Java-based rpcgen RPC protocol
-    /// compiler. jrpcgen is a Java-based tool that generates source code of Java
+    /// The class <code>jrpcgen</code> implements an rpcgen RPC protocol
+    /// compiler. jrpcgen is a c#-based tool that generates source code of C#
     /// classes to implement an RPC protocol. The input to jrpcgen is a language
     /// similiar to C (but more probably much more similiar to FORTRAN) known as
     /// the RPC language (Remote Procedure Call Language).
+    /// Converted to C# using the db4o Sharpen tool and then modified to work
+    /// with the C# standard file I/O classes.
     /// </remarks>
     /// <version>$Revision: 1.6 $ $Date: 2007/05/29 19:38:30 $ $State: Exp $ $Locker:  $</version>
     /// <author>Harald Albrecht</author>
+    /// <author>Jay Walters</author>
     public class jrpcgen
     {
         //

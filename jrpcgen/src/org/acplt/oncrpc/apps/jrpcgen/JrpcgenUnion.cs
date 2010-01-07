@@ -7,10 +7,12 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenUnion</code> class represents a single union defined
 	/// in an rpcgen "x"-file.
+	/// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.1.1.1 $ $Date: 2003/08/13 12:03:47 $ $State: Exp $ $Locker:  $
 	/// 	</version>
 	/// <author>Harald Albrecht</author>
+	/// <author>Jay Walters</author>
 	public class JrpcgenUnion
 	{
 		/// <summary>Union identifier.</summary>

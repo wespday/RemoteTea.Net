@@ -7,9 +7,11 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenUnionArm</code> class represents a single union arm defined
 	/// for a particular union in an rpcgen "x"-file.
+	/// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.2 $ $Date: 2003/08/14 08:09:59 $ $State: Exp $ $Locker:  $</version>
 	/// <author>Harald Albrecht</author>
+	/// <author>Jay Walters</author>
 	public class JrpcgenUnionArm
 	{
 		/// <summary>Value for which the descriminated union arm is valid.</summary>

@@ -8,10 +8,12 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// The <code>JrpcgenEnum</code> class represents a single enumeration
 	/// from an rpcgen "x"-file. It is a "container" for the elements (constants)
 	/// belonging to this enumeration.
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.1.1.1 $ $Date: 2003/08/13 12:03:45 $ $State: Exp $ $Locker:  $
 	/// 	</version>
 	/// <author>Harald Albrecht</author>
+        /// <author>Jay Walters</author>
 	public class JrpcgenEnum
 	{
 		/// <summary>Enumeration identifier.</summary>

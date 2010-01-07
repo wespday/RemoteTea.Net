@@ -9,6 +9,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// This class implements the SHA-1 algorithm as described in
 	/// "Federal Information Processing Standards Publication 180-1:
 	/// Specifications for the Secure Hash Standard. April 17, 1995."
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	public class JrpcgenSHA
 	{

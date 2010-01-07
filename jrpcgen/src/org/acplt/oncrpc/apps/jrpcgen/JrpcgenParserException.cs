@@ -7,10 +7,12 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenParserException</code> class represents a parser
 	/// exception indicating to abort parsing the x-file.
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.1.1.1 $ $Date: 2003/08/13 12:03:46 $ $State: Exp $ $Locker:  $
 	/// 	</version>
 	/// <author>Harald Albrecht</author>
+        /// <author>Jay Walters</author>
 	[System.Serializable]
 	internal class JrpcgenParserException : System.Exception
 	{

@@ -7,10 +7,12 @@ namespace org.acplt.oncrpc.apps.jrpcgen
 	/// <remarks>
 	/// The <code>JrpcgenConst</code> class represents a single constant defined
 	/// in an rpcgen "x"-file.
+        /// Converted to C# using the db4o Sharpen tool.
 	/// </remarks>
 	/// <version>$Revision: 1.1.1.1 $ $Date: 2003/08/13 12:03:45 $ $State: Exp $ $Locker:  $
 	/// 	</version>
 	/// <author>Harald Albrecht</author>
+        /// <author>Jay Walters</author>
 	public class JrpcgenConst
 	{
 		/// <summary>Constant identifier.</summary>

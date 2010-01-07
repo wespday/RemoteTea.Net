@@ -23,8 +23,8 @@
  */
 
 /*
- * To compile into java code use:
- *   java -jar <whereever/>JFlex.jar JrpcgenScanner.flex
+ * To compile into c# code use:
+ *    csflex --csharp -v JrpcgenScanner.flex
  */
 
 namespace org.acplt.oncrpc.apps.jrpcgen {
@@ -35,9 +35,6 @@ using org.acplt.oncrpc.apps.jrpcgen.cup_runtime.*;
 
 %class JrpcgenScanner
 %unicode
-// Do not use %cup directive here as this causes JFlex to create a parser
-// class which tries to always implement java_cup.runtime.Scanner...
-//%cup
 %implements org.acplt.oncrpc.apps.jrpcgen.cup_runtime.Scanner
 %function next_token
 %type org.acplt.oncrpc.apps.jrpcgen.cup_runtime.Symbol

@@ -23,10 +23,10 @@
  */
 
 /*
- * To compile into java code use:
- *   java java_cup.Main -interface \
- *     -runtime org.acplt.oncrpc.apps.jrpcgen.cup_runtime \
- *     -symbols JrpcgenSymbols -parser JrpcgenParser < JrpcgenParser.cup
+ * To compile into c# code use:
+ *   c#cup -namespace org.acplt.oncrpc.apps.jrpcgen
+ *         -parser JrpcgenParser \
+ *         -symbols JrpcgenSymbols < JrpcgenParser.cup
  */
  
 using TUVienna.CS_CUP.Runtime;

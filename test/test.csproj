@@ -12,7 +12,8 @@
     <AssemblyName>test</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>tests.org.acplt.oncrpc.EmbeddedPortmapTest</StartupObject>
+    <StartupObject>
+    </StartupObject>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -66,51 +67,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\org\acplt\oncrpc\EmbeddedPortmapTest.cs" />
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\ANSWER.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoClientExample.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoServer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoServerStub.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\ENUMBAZ.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\ENUMFOO.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\LINKEDLIST.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\SILLYSTRUCT.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\SOMERESULT.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\STRING.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\STRINGVECTOR.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\TREE.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\org\acplt\oncrpc\jrpcgen\UNION.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\ANSWER.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demo.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoClient.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoClientExample.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoServer.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\demoServerStub.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\ENUMBAZ.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\ENUMFOO.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\LINKEDLIST.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\SILLYSTRUCT.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\SOMERESULT.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\STRING.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\STRINGVECTOR.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\TREE.cs" />
+    <Compile Include="src\org\acplt\oncrpc\jrpcgen\UNION.cs" />
     <Compile Include="src\org\acplt\oncrpc\ServerTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +89,7 @@
       <Project>{CC842806-CB2B-4262-A503-E4BD50F350EF}</Project>
       <Name>jrpcgen</Name>
     </ProjectReference>
-    <ProjectReference Include="..\remotetea.net\RemoteTea.Net.csproj">
+    <ProjectReference Include="..\remoteteanet\RemoteTea.Net.csproj">
       <Project>{9C016B59-DAD9-48A1-A5E0-7A477A108530}</Project>
       <Name>RemoteTea.Net</Name>
     </ProjectReference>

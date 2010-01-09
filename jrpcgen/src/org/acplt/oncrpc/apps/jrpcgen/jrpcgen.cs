@@ -2455,7 +2455,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 // It's a remote procedure, so it does return simply nothing.
                 // We use the singleton XDR_VOID to return a "nothing".
                 //
-                @out.WriteLine("                " + proc.procedureId + "(" + @params + ");");
+                @out.WriteLine("                " + procName + "(" + @params + ");");
                 @out.WriteLine("                call.reply(XdrVoid.XDR_VOID);");
             }
             else
@@ -2553,7 +2553,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             // file name from the program's name (this case is identified by a
             // null clientClass name).
             //
-            string serverClass = org.acplt.oncrpc.apps.jrpcgen.jrpcgen.serverClass;
+            string serverClass = jrpcgen.serverClass;
             if (serverClass == null)
             {
                 serverClass = baseClassname + "_" + programInfo.programId + "_ServerStub";
@@ -2587,7 +2587,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             int versionSize = programInfo.versions.Count;
             for (int versionIdx = 0; versionIdx < versionSize; ++versionIdx)
             {
-                org.acplt.oncrpc.apps.jrpcgen.JrpcgenVersionInfo versionInfo = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenVersionInfo
+                JrpcgenVersionInfo versionInfo = (JrpcgenVersionInfo
                     )programInfo.versions[versionIdx];
                 @out.WriteLine("            new OncRpcServerTransportRegistrationInfo(" + baseClassname
                      + "." + programInfo.programId + ", " + versionInfo.versionNumber + "),");
@@ -2610,7 +2610,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             //
             for (int versionIdx = 0; versionIdx < versionSize; ++versionIdx)
             {
-                org.acplt.oncrpc.apps.jrpcgen.JrpcgenVersionInfo versionInfo = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenVersionInfo
+                JrpcgenVersionInfo versionInfo = (JrpcgenVersionInfo
                     )programInfo.versions[versionIdx];
                 int procSize = versionInfo.procedures.Count;
                 for (int procIdx = 0; procIdx < procSize; ++procIdx)
@@ -2618,7 +2618,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                     //
                     // We only need to emit STRUCTs required here
                     //
-                    org.acplt.oncrpc.apps.jrpcgen.JrpcgenProcedureInfo procInfo = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenProcedureInfo
+                    JrpcgenProcedureInfo procInfo = (JrpcgenProcedureInfo
                         )versionInfo.procedures[procIdx];
                     dumpServerStubStructs(@out, procInfo);
                 }
@@ -2632,7 +2632,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             @out.WriteLine("            {");
             for (int versionIdx = 0; versionIdx < versionSize; ++versionIdx)
             {
-                org.acplt.oncrpc.apps.jrpcgen.JrpcgenVersionInfo versionInfo = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenVersionInfo
+                JrpcgenVersionInfo versionInfo = (JrpcgenVersionInfo
                     )programInfo.versions[versionIdx];
                 @out.Write(versionIdx == 0 ? "        " : "        } else ");
                 @out.WriteLine("if ( version == " + versionInfo.versionNumber + " ) {");
@@ -2646,7 +2646,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                     // comming from an enumeration: in this case we need also to
                     // dump the enclosure.
                     //
-                    org.acplt.oncrpc.apps.jrpcgen.JrpcgenProcedureInfo procInfo = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenProcedureInfo
+                    JrpcgenProcedureInfo procInfo = (JrpcgenProcedureInfo
                         )versionInfo.procedures[procIdx];
                     @out.WriteLine("            case " + checkForEnumValue(procInfo.procedureNumber) +
                         ": {");
@@ -2656,6 +2656,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 }
                 @out.WriteLine("            default:");
                 @out.WriteLine("                call.failProcedureUnavailable();");
+                @out.WriteLine("                break;");
                 @out.WriteLine("            }");
             }
             @out.WriteLine("        } else {");

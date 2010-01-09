@@ -50,7 +50,7 @@
     <Compile Include="src\org\acplt\oncrpc\apps\jportmap\csportmap.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\remotetea.net\RemoteTea.Net.csproj">
+    <ProjectReference Include="..\remoteteanet\RemoteTea.Net.csproj">
       <Project>{9C016B59-DAD9-48A1-A5E0-7A477A108530}</Project>
       <Name>RemoteTea.Net</Name>
     </ProjectReference>

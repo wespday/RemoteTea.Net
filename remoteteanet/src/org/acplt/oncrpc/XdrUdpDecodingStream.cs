@@ -203,7 +203,7 @@ namespace org.acplt.oncrpc
             }
             else
             {
-                throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_BUFFERUNDERFLOW
+                throw (new OncRpcException(OncRpcException.RPC_BUFFERUNDERFLOW
                     ));
             }
         }
@@ -248,7 +248,7 @@ namespace org.acplt.oncrpc
                 }
                 else
                 {
-                    throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_BUFFERUNDERFLOW
+                    throw (new OncRpcException(OncRpcException.RPC_BUFFERUNDERFLOW
                         ));
                 }
             }
@@ -296,7 +296,7 @@ namespace org.acplt.oncrpc
                 }
                 else
                 {
-                    throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_BUFFERUNDERFLOW
+                    throw (new OncRpcException(OncRpcException.RPC_BUFFERUNDERFLOW
                         ));
                 }
             }

@@ -94,6 +94,19 @@ namespace tests.org.acplt.oncrpc.jrpcgen
             return a * b;
         }
 
+        public override SILLYSTRUCT Test_marshal_2(SILLYSTRUCT src, int a, String b)
+        {
+            SILLYSTRUCT s = new SILLYSTRUCT();
+            s.buffer = src.bytes;
+            s.bytes = src.buffer;
+            s.fixedbuffer = src.fixedbuffer;
+            s.fixedbytes = src.fixedbytes;
+            s.nonsense = b;
+            s.ui1 = a;
+            s.ui2 = src.ui1;
+            return s;
+        }
+
 		public static void Main(string[] args)
 		{
 			Console.Out.WriteLine("Starting demoServer...");

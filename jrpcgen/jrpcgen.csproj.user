@@ -17,10 +17,10 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <StartArguments>demo.x</StartArguments>
-    <StartWorkingDirectory>C:\tools\rpc.net\test\src\org\acplt\oncrpc\jrpcgen\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\tools\remotetea.net\test\src\org\acplt\oncrpc\jrpcgen\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StartArguments>demo.x</StartArguments>
-    <StartWorkingDirectory>C:\tools\rpc.net\test\src\org\acplt\oncrpc\jrpcgen\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\tools\remotetea.net\test\src\org\acplt\oncrpc\jrpcgen\</StartWorkingDirectory>
   </PropertyGroup>
 </Project>

@@ -850,8 +850,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 return string.Empty;
             }
             System.Text.StringBuilder code = new System.Text.StringBuilder();
-            org.acplt.oncrpc.apps.jrpcgen.JrpcgenEnDecodingInfo data = baseEnDecodingSyllable
-                (decl);
+            JrpcgenEnDecodingInfo data = baseEnDecodingSyllable(decl);
             //
             // In case no type was specified for the outer element, assume no
             // name, otherwise convert into a suitable prefix for code generation
@@ -911,7 +910,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 //     foo.xdrDecode(xdr);
                 // In case of arrays, this is going to be hairy...
                 //
-                if (decl.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.SCALAR)
+                if (decl.kind == JrpcgenDeclaration.SCALAR)
                 {
                     code.Append("        ");
                     if (encode)
@@ -934,7 +933,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                     // It's not a built-in base data type but instead an indirection
                     // (reference) to some instance (optional data).
                     //
-                    if (decl.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.INDIRECTION)
+                    if (decl.kind == JrpcgenDeclaration.INDIRECTION)
                     {
                         code.Append("        ");
                         if (encode)
@@ -966,7 +965,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 {
                     code.Append("        { ");
                     code.Append("int _size = ");
-                    if (decl.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.DYNAMICVECTOR)
+                    if (decl.kind == JrpcgenDeclaration.DYNAMICVECTOR)
                     {
                         //
                         // Dynamic array size. So we need to use the current size
@@ -980,7 +979,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                         code.Append(checkForEnumValue(decl.size));
                     }
                     code.Append("; ");
-                    if (decl.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.DYNAMICVECTOR)
+                    if (decl.kind == JrpcgenDeclaration.DYNAMICVECTOR)
                     {
                         //
                         // Dynamic array size. So we need to encode size information.
@@ -999,7 +998,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 {
                     code.Append("        { ");
                     code.Append("int _size = ");
-                    if (decl.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.DYNAMICVECTOR)
+                    if (decl.kind == JrpcgenDeclaration.DYNAMICVECTOR)
                     {
                         //
                         // Dynamic array size. So we need to decode size information.
@@ -1134,17 +1133,17 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             // together with their type.
             //
             bool useIteration = false;
-            org.acplt.oncrpc.apps.jrpcgen.JrpcgenSHA hash = createSHA(s.identifier);
+            JrpcgenSHA hash = createSHA(s.identifier);
             for (int i = 0; i < s.elements.Count; ++i)
             {
-                org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration d = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration
+                JrpcgenDeclaration d = (JrpcgenDeclaration
                     )s.elements[i];
                 hash.update(d.type);
                 hash.update(d.kind);
                 hash.update(d.identifier);
                 @out.Write(access + checkForSpecials(d.type) + " ");
-                if (((d.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.FIXEDVECTOR) ||
-                    (d.kind == org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration.DYNAMICVECTOR)) && !
+                if (((d.kind == JrpcgenDeclaration.FIXEDVECTOR) ||
+                    (d.kind == JrpcgenDeclaration.DYNAMICVECTOR)) && !
                     d.type.Equals("string"))
                 {
                     @out.Write("[] ");
@@ -1238,7 +1237,6 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             @out.WriteLine();
             @out.WriteLine("    public void xdrEncode(XdrEncodingStream xdr) {");
             IEnumerator decls = s.elements.GetEnumerator();
-            decls.MoveNext();
             if (useIteration)
             {
                 @out.WriteLine("        " + s.identifier + " _this = this;");
@@ -1248,13 +1246,14 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                 // when using the iteration loop for serializing emit code for
                 // all but the tail element, which is the reference to our type.
                 //
+                decls.MoveNext();
                 for (int size = s.elements.Count; size > 1; --size)
                 {
-                    decl = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration)decls.Current;
+                    decl = (JrpcgenDeclaration)decls.Current;
                     @out.Write("    " + codingMethod(decl, true, "_this"));
                     decls.MoveNext();
                 }
-                decl = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration)decls.Current;
+                decl = (JrpcgenDeclaration)decls.Current;
                 @out.WriteLine("            _this = _this." + decl.identifier + ";");
                 @out.WriteLine("            xdr.xdrEncodeBoolean(_this != null);");
                 @out.WriteLine("        } while ( _this != null );");
@@ -1263,7 +1262,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             {
                 while (decls.MoveNext())
                 {
-                    @out.Write(codingMethod((org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration)decls.Current
+                    @out.Write(codingMethod((JrpcgenDeclaration)decls.Current
                         , true));
                 }
             }
@@ -1271,24 +1270,24 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             @out.WriteLine();
             @out.WriteLine("    public void xdrDecode(XdrDecodingStream xdr) {");
             decls = s.elements.GetEnumerator();
-            decls.MoveNext();
             if (useIteration)
             {
                 @out.WriteLine("        " + s.identifier + " _this = this;");
                 @out.WriteLine("        " + s.identifier + " _next;");
                 @out.WriteLine("        do {");
-                org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration decl = null;
+                JrpcgenDeclaration decl = null;
                 //
                 // when using the iteration loop for serializing emit code for
                 // all but the tail element, which is the reference to our type.
                 //
+                decls.MoveNext();
                 for (int size = s.elements.Count; size > 1; --size)
                 {
-                    decl = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration)decls.Current;
+                    decl = (JrpcgenDeclaration)decls.Current;
                     @out.Write("    " + codingMethod(decl, false, "_this"));
                     decls.MoveNext();
                 }
-                decl = (org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration)decls.Current;
+                decl = (JrpcgenDeclaration)decls.Current;
                 @out.WriteLine("            _next = xdr.xdrDecodeBoolean() ? new " + s.identifier +
                      "() : null;");
                 @out.WriteLine("            _this." + decl.identifier + " = _next;");
@@ -1299,7 +1298,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             {
                 while (decls.MoveNext())
                 {
-                    @out.Write(codingMethod((org.acplt.oncrpc.apps.jrpcgen.JrpcgenDeclaration)decls.Current
+                    @out.Write(codingMethod((JrpcgenDeclaration)decls.Current
                         , false));
                 }
             }

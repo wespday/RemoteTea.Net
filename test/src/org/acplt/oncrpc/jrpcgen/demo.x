@@ -87,6 +87,7 @@ program DEMO {
         LINKEDLIST llcat(LINKEDLIST l1, LINKEDLIST l2) = 55;
         double mult(double a, double b) = 71;
         void test(string a, ENUMFOO b, ENUMFOO c, int d) = 100;
+        SILLYSTRUCT test_marshal(SILLYSTRUCT src, int a, string b) = 121;
     } = 2;
 } = 0x20049678;
 

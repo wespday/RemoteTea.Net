@@ -264,7 +264,7 @@ namespace org.acplt.oncrpc
 						}
 						catch (System.IO.IOException e)
 						{
-							throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_CANTSEND
+							throw (new OncRpcException(OncRpcException.RPC_CANTSEND
 								, e.Message));
 						}
 						//

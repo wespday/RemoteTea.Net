@@ -336,7 +336,7 @@ namespace org.acplt.oncrpc
 		/// <exception cref="OncRpcException">if an ONC/RPC error occurs.</exception>
 		/// <exception cref="System.IO.IOException">if an I/O error occurs.</exception>
 		/// <exception cref="org.acplt.oncrpc.OncRpcException"></exception>
-		public static org.acplt.oncrpc.OncRpcClient newOncRpcClient(IPAddress 
+		public static OncRpcClient newOncRpcClient(IPAddress 
 			host, int program, int version, int protocol)
 		{
 			return newOncRpcClient(host, program, version, 0, protocol);
@@ -367,7 +367,7 @@ namespace org.acplt.oncrpc
 		/// <exception cref="OncRpcException">if an ONC/RPC error occurs.</exception>
 		/// <exception cref="System.IO.IOException">if an I/O error occurs.</exception>
 		/// <exception cref="org.acplt.oncrpc.OncRpcException"></exception>
-		public static org.acplt.oncrpc.OncRpcClient newOncRpcClient(IPAddress 
+		public static OncRpcClient newOncRpcClient(IPAddress 
 			host, int program, int version, int port, int protocol)
 		{
 			switch (protocol)
@@ -379,17 +379,17 @@ namespace org.acplt.oncrpc
 					// how to create the network connection and how to send and receive
 					// data to and from it.
 					//
-					return new org.acplt.oncrpc.OncRpcUdpClient(host, program, version, port);
+					return new OncRpcUdpClient(host, program, version, port);
 				}
 
-				case org.acplt.oncrpc.OncRpcProtocols.ONCRPC_TCP:
+				case OncRpcProtocols.ONCRPC_TCP:
 				{
-					return new org.acplt.oncrpc.OncRpcTcpClient(host, program, version, port);
+					return new OncRpcTcpClient(host, program, version, port);
 				}
 
 				default:
 				{
-					throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_UNKNOWNPROTO
+					throw (new OncRpcException(OncRpcException.RPC_UNKNOWNPROTO
 						));
 				}
 			}
@@ -432,7 +432,7 @@ namespace org.acplt.oncrpc
 		/// <param name="result">The object receiving the result of the procedure call.</param>
 		/// <exception cref="OncRpcException">if an ONC/RPC error occurs.</exception>
 		/// <exception cref="org.acplt.oncrpc.OncRpcException"></exception>
-		public virtual void call(int procedureNumber, org.acplt.oncrpc.XdrAble @params, org.acplt.oncrpc.XdrAble
+		public virtual void call(int procedureNumber, XdrAble @params, XdrAble
 			 result)
 		{
 			lock (this)
@@ -457,8 +457,8 @@ namespace org.acplt.oncrpc
 		/// <param name="result">The object receiving the result of the procedure call.</param>
 		/// <exception cref="OncRpcException">if an ONC/RPC error occurs.</exception>
 		/// <exception cref="org.acplt.oncrpc.OncRpcException"></exception>
-		public abstract void call(int procedureNumber, int versionNumber, org.acplt.oncrpc.XdrAble
-			 parameters, org.acplt.oncrpc.XdrAble result);
+		public abstract void call(int procedureNumber, int versionNumber, XdrAble
+			 parameters, XdrAble result);
 
 		/// <summary>
 		/// Set the timout for remote procedure calls to wait for an answer from
@@ -539,7 +539,7 @@ namespace org.acplt.oncrpc
 		/// Authentication protocol handling object encapsulating
 		/// authentication information.
 		/// </param>
-		public virtual void setAuth(org.acplt.oncrpc.OncRpcClientAuth auth)
+		public virtual void setAuth(OncRpcClientAuth auth)
 		{
 			this.auth = auth;
 		}
@@ -550,7 +550,7 @@ namespace org.acplt.oncrpc
 		/// Authentication protocol handling object encapsulating
 		/// authentication information.
 		/// </returns>
-		public virtual org.acplt.oncrpc.OncRpcClientAuth getAuth()
+		public virtual OncRpcClientAuth getAuth()
 		{
 			return auth;
 		}
@@ -626,6 +626,6 @@ namespace org.acplt.oncrpc
 
 		/// <summary>Authentication protocol object to be used when issuing ONC/RPC calls.</summary>
 		/// <remarks>Authentication protocol object to be used when issuing ONC/RPC calls.</remarks>
-		internal org.acplt.oncrpc.OncRpcClientAuth auth;
+		internal OncRpcClientAuth auth;
 	}
 }

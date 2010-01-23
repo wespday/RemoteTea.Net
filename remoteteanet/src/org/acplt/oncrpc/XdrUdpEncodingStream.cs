@@ -117,7 +117,7 @@ namespace org.acplt.oncrpc
 		public override void endEncoding()
 		{
             IPEndPoint endPoint = new IPEndPoint(receiverAddress, receiverPort);
-            socket.SendTo(buffer, bufferIndex, new SocketFlags(), endPoint);
+            socket.SendTo(buffer, bufferIndex, SocketFlags.None, endPoint);
 		}
 
 		/// <summary>
@@ -168,7 +168,7 @@ namespace org.acplt.oncrpc
 			}
 			else
 			{
-				throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_BUFFEROVERFLOW
+				throw (new OncRpcException(OncRpcException.RPC_BUFFEROVERFLOW
 					));
 			}
 		}
@@ -214,7 +214,7 @@ namespace org.acplt.oncrpc
 			}
 			else
 			{
-				throw (new org.acplt.oncrpc.OncRpcException(org.acplt.oncrpc.OncRpcException.RPC_BUFFEROVERFLOW
+				throw (new OncRpcException(OncRpcException.RPC_BUFFEROVERFLOW
 					));
 			}
 		}

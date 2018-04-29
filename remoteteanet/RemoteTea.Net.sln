@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C# Express 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteTea.Net", "RemoteTea.Net.csproj", "{9C016B59-DAD9-48A1-A5E0-7A477A108530}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jrpcgen", "..\jrpcgen\jrpcgen.csproj", "{CC842806-CB2B-4262-A503-E4BD50F350EF}"

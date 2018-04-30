@@ -35,7 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".project" />
-    <None Include="_UpgradeReport_Files\.settings\org.eclipse.core.resources.prefs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

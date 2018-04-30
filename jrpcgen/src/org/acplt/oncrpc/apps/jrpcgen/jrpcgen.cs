@@ -417,7 +417,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             }
             if (emitImports)
             {
-                currentPrintWriter.WriteLine("using org.acplt.oncrpc;");
+                currentPrintWriter.WriteLine("using global::org.acplt.oncrpc;");
                 currentPrintWriter.WriteLine();
             }
             return currentPrintWriter;
@@ -460,6 +460,11 @@ namespace org.acplt.oncrpc.apps.jrpcgen
         /// </remarks>
         public static void closeJavaSourceFile()
         {
+            if (!string.IsNullOrEmpty(packageName))
+            {
+                currentPrintWriter.WriteLine("} //End of Namespace " + packageName);
+            }
+
             //
             // Create automatic footer before closing the file.
             //
@@ -2560,7 +2565,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             StreamWriter @out = createJavaSourceFile(serverClass);
             @out.WriteLine("using System.Net;");
             @out.WriteLine();
-            @out.WriteLine("using org.acplt.oncrpc.server;");
+            @out.WriteLine("using global::org.acplt.oncrpc.server;");
             @out.WriteLine();
             @out.WriteLine("/**");
             @out.WriteLine(" */");

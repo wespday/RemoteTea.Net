@@ -238,3 +238,16 @@ ModelManifest.xml
 /ReleaseArtifacts/United.AutoSeatEngine.AdvanceTrigger
 /doc/SeatReaccom_WIP - Shortcut.lnk
 /source/TestData/ActivityId-42464568-c8be-47d1-8ce8-74a5d63e1ff4
+/test/src/org/acplt/oncrpc/jrpcgen/ANSWER.cs
+/test/src/org/acplt/oncrpc/jrpcgen/demo.cs
+/test/src/org/acplt/oncrpc/jrpcgen/UNION.cs
+/test/src/org/acplt/oncrpc/jrpcgen/TREE.cs
+/test/src/org/acplt/oncrpc/jrpcgen/STRINGVECTOR.cs
+/test/src/org/acplt/oncrpc/jrpcgen/STRING.cs
+/test/src/org/acplt/oncrpc/jrpcgen/SOMERESULT.cs
+/test/src/org/acplt/oncrpc/jrpcgen/SILLYSTRUCT.cs
+/test/src/org/acplt/oncrpc/jrpcgen/LINKEDLIST.cs
+/test/src/org/acplt/oncrpc/jrpcgen/ENUMFOO.cs
+/test/src/org/acplt/oncrpc/jrpcgen/ENUMBAZ.cs
+/test/src/org/acplt/oncrpc/jrpcgen/demoServerStub.cs
+/test/src/org/acplt/oncrpc/jrpcgen/demoClient.cs

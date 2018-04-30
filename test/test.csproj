@@ -135,6 +135,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>CD "$(ProjectDir)\src\org\acplt\oncrpc\jrpcgen"
+"$(ProjectDir)\..\jrpcgen\bin\$(ConfigurationName)\jrpcgen.exe" -p tests.org.acplt.oncrpc.jrpcgen -nobackup demo.x</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -534,7 +534,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
                         // with the identifier we depend on (which is currently
                         // the case), so we just need to prepend the enclosure.
                         //
-                        @out.WriteLine("    public static readonly int " + c.identifier + " = " + dc.enclosure
+                        @out.WriteLine("    public const int " + c.identifier + " = " + dc.enclosure
                              + "." + c.value + ";");
                         return;
                     }
@@ -548,7 +548,7 @@ namespace org.acplt.oncrpc.apps.jrpcgen
             //
             // Just dump the plain value (without enclosure).
             //
-            @out.WriteLine("    public static readonly int " + c.identifier + " = " + c.value + ";"
+            @out.WriteLine("    public const int " + c.identifier + " = " + c.value + ";"
                 );
         }
 

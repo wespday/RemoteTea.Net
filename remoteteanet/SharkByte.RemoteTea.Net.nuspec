@@ -17,7 +17,7 @@ Git commit hash: $commit_id$
     </description>
     <language>en-US</language>
     <projectUrl>https://github.com/wespday/RemoteTea.Net</projectUrl>
-    <licenseUrl>https://github.com/wespday/RemoteTea.Net/blob/master/LICENSE</licenseUrl>
+    <license type="file">license\LICENSE.txt</license>
     <copyright>Copyright (c) 2018 All Authors Under GPL v2. All rights reserved.</copyright>
     <tags>rpc oncrpc</tags>
     <references>

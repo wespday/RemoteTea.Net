@@ -10,7 +10,7 @@ CALL "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Too
 @SET THIS_SCRIPT_FOLDER=%~dp0
 CD /D "%THIS_SCRIPT_FOLDER%"
 @SET ARTIFACTS=artifacts
-@SET NUGET_COMMAND=".nuget\nuget.exe"
+@SET NUGET_COMMAND="nuget.exe"
 @SET PACKAGE_VERSION=%APPVEYOR_BUILD_VERSION%
 
 IF NOT "%APPVEYOR_BUILD_VERSION%"=="" (
@@ -53,6 +53,7 @@ MKDIR "%NUGET_FRAMEWORK_FOLDER%" ||  GOTO BuildFailed
 XCOPY /F "%PROJECT_FOLDER%\bin\Release\RemoteTea.Net.*" "%NUGET_FRAMEWORK_FOLDER%\" ||  GOTO BuildFailed
 XCOPY /F "%PROJECT_FOLDER%\bin\Release\RemoteTea.Net.*" "%NUGET_PACKAGE_FOLDER%\Tools\" ||  GOTO BuildFailed
 XCOPY /F "%PROJECT_FOLDER%\bin\Release\%NUGET_PACKAGE_ID%.nuspec" "%NUGET_PACKAGE_FOLDER%\" ||  GOTO BuildFailed
+echo f | XCOPY /F /Y "%PROJECT_FOLDER%\..\LICENSE.txt" "%NUGET_PACKAGE_FOLDER%\license\LICENSE.txt" ||  GOTO BuildFailed
 XCOPY /F "jportmap\bin\Release\jportmap.*" "%NUGET_PACKAGE_FOLDER%\Tools\" ||  GOTO BuildFailedildFailed
 XCOPY /F "jrpcgen\bin\Release\jrpcgen.*" "%NUGET_PACKAGE_FOLDER%\Tools\" ||  GOTO BuildFailedildFailed
 

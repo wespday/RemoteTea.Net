@@ -34,7 +34,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".project" />
     <None Include="SharkByte.RemoteTea.Net.nuspec">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

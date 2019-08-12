@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>jportmap</RootNamespace>
     <AssemblyName>jportmap</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>org.acplt.oncrpc.apps.jportmap.csportmap</StartupObject>
     <FileUpgradeFlags>
